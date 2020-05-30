@@ -17,8 +17,26 @@ const findTaskById = (id) => {
     .first()
 }
 
+const updateTask = (changes, id) => {
+    return db('tasks')
+    .where({ id })
+    .update(changes, 'id')
+    .then(() => {
+     return findById(id)
+    })
+}
+
+const deleteTask = (id) => {
+    return db('tasks')
+    .where({ id })
+    .del()
+
+}
+
 module.exports = {
    find,
    add,
-   findTaskById
+   findTaskById,
+   updateTask,
+   deleteTask
 }

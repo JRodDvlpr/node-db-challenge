@@ -15,8 +15,26 @@ const findById = (id) => {
   .first()
 }
 
+const updateProject = (changes, id) => {
+  return db('projects')
+  .where({ id })
+  .update(changes, 'id')
+  .then(() => {
+    return findById(id)
+  })
+}
+
+
+const deleteProject = (id) => {
+  return db('projects')
+  .where({ id })
+  .del()
+}
+
 module.exports = {
   find,
   add,
-  findById
+  findById,
+  updateProject,
+  deleteProject
 }

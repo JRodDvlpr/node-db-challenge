@@ -6,7 +6,7 @@ const find = () => {
 
 const add = (resource) => {
    return db('resources')
-      .insert(resource, 'id')
+   .insert(resource, 'id')
 }
 
 module.exports = {
