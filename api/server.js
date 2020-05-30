@@ -1,8 +1,8 @@
 const express = require('express')
 
 const projectsRouter = require('../projects/projectRouter')
-const resourcesRouter = require('../resources/resources-router')
-const tasksRouter = require('../tasks/tasks-router')
+const resourcesRouter = require('../resources/resourcesRouter')
+const tasksRouter = require('../tasks/tasksRouter')
 
 const server = express()
 
